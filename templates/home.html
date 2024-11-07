@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Let's wichtel!</title>
+</head>
+<body>
+    <header>
+        <h1>Hey, ho, jetzt wird gewichtelt</h1>
+    </header>
+    <section class="center-box">
+        <h2>Anleitung:</h2>
+        <ul>
+                <li>Tragt euren Namen ein.</li>
+                <li>Tragt den Seed ein.</li>
+                <li>Tragt euer Passwort ein.</li>
+                <li>Klickt auf "Los geht's".</li>
+        </ul>
+        <form action="/submit" method="POST" style="display: flex; flex-direction: column; gap: 10px; max-width: 400px;">
+            <label for="user_name">Name:</label>
+            <input type="text" id="user_name" name="user_name" required style="width: 50%;">
+	    <br><br>
+            <label for="seed">Seed:</label>
+            <input type="text" id="seed" name="seed" required style="width: 50%;">
+	    <br><br>
+            <label for="passord">Passwort:</label>
+            <input type="text" id="password" name="password" required style="width: 50%;">
+	    <br><br>
+	    <button type="submit" style="width:100px;">Los geht's</button>
+        </form>
+    </section>
+</body>
+</html>
