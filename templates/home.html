@@ -11,19 +11,26 @@
         <h1>Hey, ho, jetzt wird gewichtelt</h1>
     </header>
     <section class="center-box">
-        <h2>Anleitung:</h2>
-        <ul>
-                <li>Tragt euren Namen ein.</li>
-                <li>Tragt den Seed ein.</li>
-                <li>Tragt euer Passwort ein.</li>
-                <li>Klickt auf "Los geht's".</li>
-        </ul>
-        <form action="/submit" method="POST" style="display: flex; flex-direction: column; gap: 10px; max-width: 400px;">
+        <form action="/wichtel/submit" method="POST" style="display: flex; flex-direction: column; gap: 10px; max-width: 400px;">
             <label for="user_name">Name:</label>
-            <input type="text" id="user_name" name="user_name" required style="width: 50%;">
+            <!-- <input type="text" id="user_name" name="user_name" required style="width: 50%;"> -->
+	    <select name="user_name" id="user_name" required style="width: 50%;">
+		    <option value="Blank"></option>
+		    <!-- <option value="Linda">Linda</option> -->
+		    <!-- <option value="Thomas">Thomas</option> -->
+		    <!-- <option value="Juliane">Juliane</option> -->
+		    <!-- <option value="Annette">Annette</option> -->
+		    <!-- <option value="Oli">Oli</option> -->
+		    <option value="Anja">Anja</option>
+		    <option value="Dani">Dani</option>
+		    <option value="Isa">Isa</option>
+		    <option value="Joni">Joni</option>
+		    <option value="Mike">Mike</option>
+		    <option value="Tessi">Tessi</option>
+	    </select> 
 	    <br><br>
             <label for="seed">Seed:</label>
-            <input type="text" id="seed" name="seed" required style="width: 50%;">
+            <input type="text" value="2025" id="seed" name="seed" required style="width: 50%;">
 	    <br><br>
             <label for="passord">Passwort:</label>
             <input type="text" id="password" name="password" required style="width: 50%;">

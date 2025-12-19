@@ -1,11 +1,17 @@
-from flask import Flask, render_template, request
-
-inputNames  = [ "Bob", "Alice" ]
+from flask import Flask, render_template, request, send_from_directory
+from werkzeug.middleware.proxy_fix import ProxyFix
+import os
 
 passwords = {
-        "Bob":"verysecure",
-        "Alice":"mylittlepassword" 
+        "Tessi":"swivel-casino",
+        "Anja":"tropics-landscape" ,
+        "Mike":"confess-florist" ,
+        "Isa":"bleak-divinely" ,
+        "Dani":"research-unopened" ,
+        "Joni":"flask-display"
         }
+
+inputNames = list(passwords.keys())
 
 def wichteln(seed:int):
     from itertools import permutations
@@ -26,6 +32,8 @@ def wichteln(seed:int):
     return mapping
 
 app = Flask(__name__)
+app.config["APPLICATION_ROOT"] = "/wichtel"
+app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1, x_prefix=1)
 
 @app.route('/')
 def home():
@@ -54,6 +62,10 @@ def submit():
     mapping = wichteln(seed)
     receiver = mapping[user_name]
     return render_template('response.html', receiver=receiver)
+
+@app.route("/static/<path:filename>")
+def static_files(filename):
+    return send_from_directory(os.path.join(os.getcwd(),"static"),filename)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8081)

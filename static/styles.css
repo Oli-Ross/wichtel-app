@@ -35,15 +35,18 @@ footer {
 }
 
 .center-box {
+    display: grid;
+    justify-content:center;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
     margin: 0 auto;
-    max-width: 300px;
+    max-width: 200px;
     width: 100%;
 }
 .center-box form {
-    display: flex;
+    display: grid;
     flex-direction: column;
     gap: 15px;
 }
+
