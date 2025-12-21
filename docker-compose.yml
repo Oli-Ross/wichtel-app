@@ -1,0 +1,6 @@
+services:
+  wichtel:
+    image: wichtel
+    restart: unless-stopped
+    ports:
+      - 8087:8081

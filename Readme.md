@@ -7,7 +7,5 @@ This simple web app allows you to remotely and asynchronously determine who gift
 - Each individual enters their name, password + seed and learns who they should gift
 
 ## Running the web app
-- Install the minimal `nginx` config (edit beforehand) + start `nginx`
-- Activate venv: `python -m venv .venv && source .venv/bin/activate`
-- Install python dependencies: `pip install -r requirements`
-- Start the app: `chmod +x launch.sh && ./launch.sh`
+Run `docker build wichtel . && docker compose up`.
+App will run on port 8087
